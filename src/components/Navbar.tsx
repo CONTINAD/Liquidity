@@ -11,6 +11,7 @@ const navLinks = [
     { href: "/dashboard", label: "Dashboard" },
     { href: "/mechanics", label: "Mechanics" },
     { href: "/media", label: "Media" },
+    { href: "/whitepaper", label: "Whitepaper" },
 ];
 
 export default function Navbar() {
@@ -50,8 +51,8 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-lg ${isActive
-                                        ? "text-aqua"
-                                        : "text-muted hover:text-foreground"
+                                    ? "text-aqua"
+                                    : "text-muted hover:text-foreground"
                                     }`}
                             >
                                 {link.label}
@@ -113,8 +114,8 @@ export default function Navbar() {
                                 href={link.href}
                                 onClick={() => setMobileOpen(false)}
                                 className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${pathname === link.href
-                                        ? "bg-aqua/10 text-aqua"
-                                        : "text-muted hover:text-foreground hover:bg-surface-light"
+                                    ? "bg-aqua/10 text-aqua"
+                                    : "text-muted hover:text-foreground hover:bg-surface-light"
                                     }`}
                             >
                                 {link.label}
