@@ -74,6 +74,7 @@ async function getTransaction(signature: string): Promise<unknown> {
 
 interface DexScreenerPair {
     pairAddress: string;
+    dexId: string;
     baseToken: { symbol: string; address: string };
     quoteToken: { symbol: string; address: string };
     priceUsd: string;
@@ -82,6 +83,13 @@ interface DexScreenerPair {
     volume: { h24: number };
     txns: { h24: { buys: number; sells: number } };
     fdv: number;
+}
+
+/** Detect whether token is on Pump.fun bonding curve or graduated to Raydium */
+function isPumpFunPhase(pair: DexScreenerPair | null): boolean {
+    if (!pair) return true; // No pair found = probably still on bonding curve
+    const dex = (pair.dexId || "").toLowerCase();
+    return !dex.includes("raydium") && !dex.includes("orca");
 }
 
 async function getDexScreenerPair(
