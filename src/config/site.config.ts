@@ -27,8 +27,8 @@ export const siteConfig = {
 
   // API keys (live mode)
   apis: {
-    solanaRpc: "YOUR_SOLANA_RPC_ENDPOINT",
-    heliusKey: "",
+    solanaRpc: "https://mainnet.helius-rpc.com/?api-key=d319b384-85ac-4f12-bd1f-18458edc923b",
+    heliusKey: "d319b384-85ac-4f12-bd1f-18458edc923b",
     birdeyeKey: "",
   },
 
